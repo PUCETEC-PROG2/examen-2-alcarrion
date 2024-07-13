@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Películas{% endblock title %}
+{% block content %}
+    <p class="p-2">Mira las películas que te gustan</p>
+    <ul class="list-group">
+        {% for movie in movies %}
+        <li class="list-group-item">
+            <a href="movie/{{movie.pk}}">{{ movie.title | capfirst }}</a>
+            <p> {{movie.title}}<p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
